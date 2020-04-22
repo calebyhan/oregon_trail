@@ -1,4 +1,5 @@
 import random
+import time
 
 # This function adds two numbers
 def add(x, y):
@@ -38,10 +39,19 @@ def prob_theft(money, food):
 running = True
 money = 6000
 while running == True:
+    print("OREGON TRAIL")
+    time.sleep(1)
+    print("By Ocra004, Shadowfax13, Ripsticker321, LJCoder619")
+    time.sleep(1)
+    print("Copyright 2020")
+    time.sleep(1)
+    print("Loading....")
+    time.sleep(2)
     print("Welcome to the Oregon Trail!")
+
     start_loop = True
     while start_loop == True:
-        start = input("Would you like to 1: Play or 2: leave?")
+        start = input("Would you like to 1: Play or 2: leave? ")
         if start == "1":
             print("Let's get started!")
             start_loop = False
@@ -67,7 +77,7 @@ while running == True:
             shop = False
         elif shop_choice == "1":
             while oxen_choice == True:
-                oxen = int(input("How many yokes would you like to buy?(3 max)"))
+                oxen = int(input("How many yokes would you like to buy?(3 max) "))
                 if oxen > 4:
                     print("Enter a positive value less than 4.")
                 else:
@@ -76,7 +86,7 @@ while running == True:
                     oxen_choice = False
         elif shop_choice == "2":
             while food_choice == True:
-                food = int(input("How many pounds of food would you like to buy?(2000 max)"))
+                food = int(input("How many pounds of food would you like to buy?(2000 max) "))
                 if food > 2000:
                     print("Enter a positive value less than 2000.")
                 else:
@@ -85,7 +95,7 @@ while running == True:
                     food_choice = False
         elif shop_choice == "3":
             while ammo_choice == True:
-                ammo = int(input("How many boxes of ammunition would you like to buy?(100 max)"))
+                ammo = int(input("How many boxes of ammunition would you like to buy?(100 max) "))
                 if ammo > 100:
                     print("Enter a positive value less than 100.")
                 else:
