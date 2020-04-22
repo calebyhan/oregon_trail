@@ -1,3 +1,5 @@
+import random
+
 # This function adds two numbers
 def add(x, y):
     return x + y
@@ -17,6 +19,21 @@ def multiply(x, y):
 def divide(x, y):
     return x / y
 
+def prob_theft(money, food):
+    answer = ""
+    if money >= 1000:
+        rint = random.randint(1, 5)
+        if rint = 1:
+            answer = "$100 was stolen."
+    elif (money > 500) and (money < 1000):
+        rint = random.randint(1, 7)
+        if rint = 1:
+            answer = "$75 was stolen."
+    else:
+        rint = random.randint(1, 10)
+        if rint = 1:
+            answer = "$50 was stolen."
+    return answer
 
 amount_1 = 0
 amount_2 = 0
