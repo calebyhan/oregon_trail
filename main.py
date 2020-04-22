@@ -20,7 +20,7 @@ def multiply(x, y):
 def divide(x, y):
     return x / y
 
-def prob_theft(money, food):
+def prob_theft(money):
     answer = ""
     if money >= 1000:
         rint = random.randint(1, 5)
@@ -36,9 +36,48 @@ def prob_theft(money, food):
             answer = "$50 was stolen."
     return answer
 
+def start():
+    start_loop = True
+    while start_loop:
+        start = input("Would you like to 1: Play or 2: leave? ")
+        if start == "1":
+            print("Let's get started!")
+            start_loop = False
+        elif start == "2":
+            start_loop = False
+        else:
+            print("I do not recognise {}. Please try again.".format(start))
+
+def money_func(money):
+    money_loop = True
+    while money_loop:
+        money_choice = int(input(
+            "Do you want to be 1: a  Banker ($6000) 2: Storekeeper ($5000), 3: Factory Worker($4000), 4:Carpenter($3500), 5:Silversmith ($5000)"))
+        if money_choice == "1":
+            money = 6000
+            print("Good choice!")
+            money_loop = False
+        elif money_choice == "2":
+            money = 5000
+            print("Nice!")
+            money_loop = False
+        elif money_choice == "3":
+            money = 4000
+            print("Ok!")
+            money_loop = False
+        elif money_choice == "4":
+            money = 3500
+            print("Sure!")
+            money_loop = False
+        elif money_choice == "5":
+            money = 5000
+            print("Crafty!")
+            money_loop = False
+        else:
+            print("I do not recognise {}. Please try again.".format(money_choice))
+
 running = True
-money = 6000
-while running == True:
+while running:
     print("OREGON TRAIL")
     time.sleep(1)
     print("By Ocra004, Shadowfax13, Ripsticker321, LJCoder619")
@@ -48,20 +87,48 @@ while running == True:
     print("Loading....")
     time.sleep(2)
     print("Welcome to the Oregon Trail!")
+    start()
+    # start_loop = True
+    # while start_loop:
+    #     start = input("Would you like to 1: Play or 2: leave? ")
+    #     if start == "1":
+    #         print("Let's get started!")
+    #         start_loop = False
+    #     elif start == "2":
+    #         running = False
+    #         start_loop = False
+    #         money_loop = False
+    #     else:
+    #         print("I do not recognise {}. Please try again.".format(start))
 
-    start_loop = True
-    while start_loop == True:
-        start = input("Would you like to 1: Play or 2: leave? ")
-        if start == "1":
-            print("Let's get started!")
-            start_loop = False
-        elif start == "2":
-            start_loop = False
-            running = False
-        else:
-            print("I do not recognise {}. Please try again.".format(start))
+    money_func(money)
+    # money_loop = True
+    # while money_loop:
+    #      money_choice = int(input("Do you want to be 1: a  Banker ($6000) 2: Storekeeper ($5000), 3: Factory Worker($4000), 4:Carpenter($3500), 5:Silversmith ($5000)"))
+    #      if money_choice == "1":
+    #         money = 6000
+    #         print("Good choice!")
+    #         money_loop = False
+    #      elif money_choice == "2":
+    #         money = 5000
+    #         print("Nice!")
+    #         money_loop = False
+    #      elif money_choice == "3":
+    #         money = 4000
+    #         print("Ok!")
+    #         money_loop = False
+    #      elif money_choice == "4":
+    #         money = 3500
+    #         print("Sure!")
+    #         money_loop = False
+    #      elif money_choice == "5":
+    #         money = 5000
+    #         print("Crafty!")
+    #         money_loop = False
+    #      else:
+    #          print("I do not recognise {}. Please try again.".format(money_choice))
     shop = True
-    while shop == True:
+    while shop:
         print("Welcome to Bob's Hardware shop! Select what you want to buy.")
         print("1. Yokes of oxen (150 dollars each)")
         print("2.Food (1 dollar per pound)")
@@ -73,36 +140,46 @@ while running == True:
         oxen_choice = True
         food_choice = True
         ammo_choice = True
+        clothes_choice = True
         if shop_choice == ".":
             shop = False
         elif shop_choice == "1":
-            while oxen_choice == True:
+            while oxen_choice:
                 oxen = int(input("How many yokes would you like to buy?(3 max) "))
-                if oxen > 4:
+                if oxen > 3:
                     print("Enter a positive value less than 4.")
                 else:
                     print("You purchased {} oxen.".format(oxen))
                     money = money - (oxen*150)
                     oxen_choice = False
         elif shop_choice == "2":
-            while food_choice == True:
+            while food_choice:
                 food = int(input("How many pounds of food would you like to buy?(2000 max) "))
                 if food > 2000:
-                    print("Enter a positive value less than 2000.")
+                    print("Enter a positive value less than 2001.")
                 else:
                     print("You purchased {} pounds of food.".format(food))
                     money = money - (food*1)
                     food_choice = False
         elif shop_choice == "3":
-            while ammo_choice == True:
+            while ammo_choice:
                 ammo = int(input("How many boxes of ammunition would you like to buy?(100 max) "))
                 if ammo > 100:
-                    print("Enter a positive value less than 100.")
+                    print("Enter a positive value less than 101.")
                 else:
                     print("You purchased {} pounds of food.".format(ammo))
                     money = money - (ammo*2)
                     ammo_choice = False
-
+        elif shop_choice == "4":
+            while clothes_choice:
+                clothes = int(input("How many clothes would you like to buy?(10 max) "))
+                if clothes > 10:
+                    print("Enter a positive value less than 11.")
+                else:
+                    print("You purchased {} pounds of food.".format(clothes))
+                    money = money - (clothes*2)
+                    clothes_choice = False
+    print("Hope you come again!")
 
 # amount_1 = 0
 # amount_2 = 0
