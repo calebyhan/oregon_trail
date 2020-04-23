@@ -35,7 +35,7 @@ def prob_theft(money):
 
 
 def supplies(money, oxen, food, ammo, clothes, parts):
-    supplies_dict = {"money": money, "oxen": oxen, "food": food, "ammo": ammo, "clothes": clothes, "parts": parts}
+    supplies_dict = {"money:": money, "oxen:": oxen, "food:": food, "ammo:": ammo, "clothes:": clothes, "parts:": parts}
     return supplies_dict
 
 
@@ -220,30 +220,36 @@ else:
 print("Let's go!")
 print("Today is,", month, 1854)
 go = input("Want to go?(y/n): ")
+game = True
 if go == 'y':
-    print("                  __________________ ")
-    print("       (_ ___    /------------------\ ")
-    print("       (*]_~_|\  |-/---\------/---\-| ")
-    print("       .// .ll     \---/      \---/")
-    print("1. Check supplies")
-    print("2. Trade")
-    print("3. Rest")
-    choices = input("What do you want to do? ")
-    if choices == "1":
-        print(supplies(money, oxen, food, ammo, clothes, parts))
-    elif choices == "2":
-        print("ok boomer")
-        # do trade function here
-    elif choices == "3":
-        if name_health <= 94:
-            name_health += 5
-        elif name1_health <= 94:
-            name1_health += 5
-        elif name2_health <= 94:
-            name2_health += 5
-        elif name3_health <= 94:
-            name3_health += 5
-        elif name4_health <= 94:
-            name4_health += 5
+    while game:
+        print("                  __________________ ")
+        print("       (_ ___    /------------------\ ")
+        print("       (*]_~_|\  |-/---\------/---\-| ")
+        print("       .// .ll     \---/      \---/")
+        print("1. Check supplies")
+        print("2. Trade")
+        print("3. Rest")
+        print("4. Exit")
+        choices = input("What do you want to do? ")
+        if choices == "1":
+            print(supplies(money, oxen, food, ammo, clothes, parts))
+        elif choices == "2":
+            print("ok boomer")
+            # do trade function here
+        elif choices == "3":
+            if name_health <= 94:
+                name_health += 5
+            elif name1_health <= 94:
+                name1_health += 5
+            elif name2_health <= 94:
+                name2_health += 5
+            elif name3_health <= 94:
+                name3_health += 5
+            elif name4_health <= 94:
+                name4_health += 5
+        elif choices == "4":
+            sys.exit()
+
 elif go == "n":
     sys.exit()
