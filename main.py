@@ -1,24 +1,21 @@
+# Online Python compiler (interpreter) to run Python online.
+# Copyright 2020
+# If you wish to use the code, please PM one of the makers listed below.
 import random
 import time
+import sys
 
-# This function adds two numbers
-def add(x, y):
-    return x + y
+oxen = 0
+food = 0
+ammo = 0
+clothes = 0
+parts = 0
+miles_to_go = 2000
+print("OREGON TRAIL")
+time.sleep(1)
+print("By Ocra004, Shadowfax13, Ripsticker321, LJCoder619, Undefined_Error, DatMathBoy")
+time.sleep(1)
 
-
-# This function subtracts two numbers
-def subtract(x, y):
-    return x - y
-
-
-# This function multiplies two numbers
-def multiply(x, y):
-    return x * y
-
-
-# This function divides two numbers
-def divide(x, y):
-    return x / y
 
 def prob_theft(money):
     answer = ""
@@ -36,215 +33,217 @@ def prob_theft(money):
             answer = "$50 was stolen."
     return answer
 
-def start():
-    start_loop = True
-    while start_loop:
-        start = input("Would you like to 1: Play or 2: leave? ")
-        if start == "1":
-            print("Let's get started!")
-            start_loop = False
-        elif start == "2":
-            start_loop = False
-        else:
-            print("I do not recognise {}. Please try again.".format(start))
 
-def money_func(money):
-    money_loop = True
-    while money_loop:
-        money_choice = int(input(
-            "Do you want to be 1: a  Banker ($6000) 2: Storekeeper ($5000), 3: Factory Worker($4000), 4:Carpenter($3500), 5:Silversmith ($5000)"))
-        if money_choice == "1":
-            money = 6000
-            print("Good choice!")
-            money_loop = False
-        elif money_choice == "2":
-            money = 5000
-            print("Nice!")
-            money_loop = False
-        elif money_choice == "3":
-            money = 4000
-            print("Ok!")
-            money_loop = False
-        elif money_choice == "4":
-            money = 3500
-            print("Sure!")
-            money_loop = False
-        elif money_choice == "5":
-            money = 5000
-            print("Crafty!")
-            money_loop = False
-        else:
-            print("I do not recognise {}. Please try again.".format(money_choice))
+def supplies(money, oxen, food, ammo, clothes, parts):
+    supplies_dict = {"money": money, "oxen": oxen, "food": food, "ammo": ammo, "clothes": clothes, "parts": parts}
+    return supplies_dict
+
 
 running = True
+money = 6000
 while running:
-    print("OREGON TRAIL")
-    time.sleep(1)
-    print("By Ocra004, Shadowfax13, Ripsticker321, LJCoder619")
-    time.sleep(1)
-    print("Copyright 2020")
-    time.sleep(1)
-    print("Loading....")
-    time.sleep(2)
     print("Welcome to the Oregon Trail!")
-    start()
-    # start_loop = True
-    # while start_loop:
-    #     start = input("Would you like to 1: Play or 2: leave? ")
-    #     if start == "1":
-    #         print("Let's get started!")
-    #         start_loop = False
-    #     elif start == "2":
-    #         running = False
-    #         start_loop = False
-    #         money_loop = False
-    #     else:
-    #         print("I do not recognise {}. Please try again.".format(start))
+    start_loop = True
+    while start_loop:
+        start = input("Would you like to 1: Leave or 2: Play? ")
+        if start == "1":
+            sys.exit()
+        elif start == "2":
+            start_loop = False
+            running = False
+        else:
+            print("I do not recognise {}. Please try again.".format(start))
+        shop = True
+print("Loading...")
+time.sleep(2)
+name_health = 100
+name1_health = 100
+name2_health = 100
+name3_health = 100
+name4_health = 100
+name = input("What is the name of the leader: ")
+name_1 = input("Name of second person: ")
+name_2 = input("Name of third person: ")
+name_3 = input("Name of fourth person: ")
+name_4 = input("Name of fifth person: ")
+print("Great!")
+print("Who do you want to be?")
+print("1. Banker")
+print("2. Storekeeper")
+print("3. Worker at a factory")
+print("4. Carpenter")
+print("5. Silversmith")
+choice = input("Role(number): ")
+if choice == '1':
+    print("Good Choice!")
+    money = 6000
+elif choice == '2':
+    print("Nice")
+    money = 5000
+elif choice == '3':
+    print("Ok!")
+    money = 4000
+elif choice == '4':
+    print("Sure!")
+    money = 3500
+elif choice == '5':
+    print("Crafty!")
+    money = 5000
+else:
+    sys.exit()
 
-    money_func(money)
-    # money_loop = True
-    # while money_loop:
-    #      money_choice = int(input("Do you want to be 1: a  Banker ($6000) 2: Storekeeper ($5000), 3: Factory Worker($4000), 4:Carpenter($3500), 5:Silversmith ($5000)"))
-    #      if money_choice == "1":
-    #         money = 6000
-    #         print("Good choice!")
-    #         money_loop = False
-    #      elif money_choice == "2":
-    #         money = 5000
-    #         print("Nice!")
-    #         money_loop = False
-    #      elif money_choice == "3":
-    #         money = 4000
-    #         print("Ok!")
-    #         money_loop = False
-    #      elif money_choice == "4":
-    #         money = 3500
-    #         print("Sure!")
-    #         money_loop = False
-    #      elif money_choice == "5":
-    #         money = 5000
-    #         print("Crafty!")
-    #         money_loop = False
-    #      else:
-    #          print("I do not recognise {}. Please try again.".format(money_choice))
+print("Select the month do you want to leave you must get to your destination before winter comes.")
+print("1. February")
+print("2. March")
+print("3. April")
+print("4. May")
+print("5. June")
+print("6. July")
+print("7. August")
+print("8. September")
+month = input("What month?(put the number): ")
+if month == '1':
+    print("ok!")
+    month = 'February 2'
+elif month == '2':
+    print("ok!")
+    month = 'March 20'
+elif month == '3':
+    print("ok!")
+    month = 'April 29'
+elif month == '4':
+    print("ok!")
+    month = 'May 16'
+elif month == '5':
+    print("ok!")
+    month = 'June 20'
+elif month == '6':
+    print("ok!")
+    month = 'July 15'
+elif month == '7':
+    print("ok!")
+    month = 'August 19'
+elif month == '8':
+    print("ok!")
+    month = 'September 23'
+else:
+    sys.exit()
+print("Let's first go to the shop to buy supplies!")
+shop_go = input("Type 1 to go!: ")
+if shop_go == '1':
     shop = True
     while shop:
+        oxen_choice = True
+        food_choice = True
+        ammo_choice = True
+        clothes_choice = True
+        parts_choice = True
         print("Welcome to Bob's Hardware shop! Select what you want to buy.")
-        print("1. Yokes of oxen (150 dollars each)")
+        print("1.Yokes of oxen (150 dollars each)")
         print("2.Food (1 dollar per pound)")
         print("3.Ammunition (2 dollars per box)")
         print("4.Clothing (5 dollars per set)")
         print("5.Spare Parts (10 dollars each)")
         print('Enter "." to leave.')
-        shop_choice = input("What is your choice?:")
-        oxen_choice = True
-        food_choice = True
-        ammo_choice = True
-        clothes_choice = True
+        print('You have', money, "to spend")
+        print('You have', oxen, "oxen")
+        print("You have", food, "pounds of food")
+        print("You have", ammo, "boxes of ammo")
+        print("You have", clothes, "sets of clothes")
+        print("You have", parts, "spare parts")
+        shop_choice = input("What is your choice?: ")
+
         if shop_choice == ".":
             shop = False
         elif shop_choice == "1":
             while oxen_choice:
-                oxen = int(input("How many yokes would you like to buy?(3 max) "))
-                if oxen > 3:
-                    print("Enter a positive value less than 4.")
+                oxen = int(input("How many yokes would you like to buy? "))
+                if oxen < 0:
+                    print("Please purchase a positive integer.")
+                elif (oxen * 150) > money:
+                    print("You do not have enough money.")
                 else:
                     print("You purchased {} oxen.".format(oxen))
-                    money = money - (oxen*150)
+                    money = money - (oxen * 150)
                     oxen_choice = False
+
         elif shop_choice == "2":
             while food_choice:
-                food = int(input("How many pounds of food would you like to buy?(2000 max) "))
-                if food > 2000:
-                    print("Enter a positive value less than 2001.")
+                food = int(input("How many pounds of food would you like to buy? "))
+                if food < 0:
+                    print("Please purchase a positive integer.")
+                elif food > money:
+                    print("You do not have enough money.")
                 else:
                     print("You purchased {} pounds of food.".format(food))
-                    money = money - (food*1)
+                    money = money - food
                     food_choice = False
+
         elif shop_choice == "3":
             while ammo_choice:
-                ammo = int(input("How many boxes of ammunition would you like to buy?(100 max) "))
-                if ammo > 100:
-                    print("Enter a positive value less than 101.")
+                ammo = int(input("How many boxes of ammunition would you like to buy? "))
+                if ammo < 0:
+                    print("Please purchase a positive integer.")
+                elif (ammo * 2) > money:
+                    print("You do not have enough money.")
                 else:
-                    print("You purchased {} pounds of food.".format(ammo))
-                    money = money - (ammo*2)
+                    print("You purchased {} boxes of ammo.".format(ammo))
+                    money = money - (ammo * 2)
                     ammo_choice = False
+
         elif shop_choice == "4":
             while clothes_choice:
-                clothes = int(input("How many clothes would you like to buy?(10 max) "))
-                if clothes > 10:
-                    print("Enter a positive value less than 11.")
+                clothes = int(input("How many sets of cloths would you like to buy? "))
+                if clothes < 0:
+                    print("Please purchase a positive integer.")
+                elif (clothes * 5) > money:
+                    print("You do not have enough money.")
                 else:
-                    print("You purchased {} pounds of food.".format(clothes))
-                    money = money - (clothes*2)
+                    print("You purchased {} sets of clothes.".format(clothes))
+                    money = money - (clothes * 5)
                     clothes_choice = False
-    print("Hope you come again!")
 
-# amount_1 = 0
-# amount_2 = 0
-# print('Welcome!')
-# print('Would you like to:')
-# print("1. Play the game")
-# print("2. Leave")
-# choice = input("Enter choice(1/2): ")
-#
-# if choice == '1':
-#     print("Nice!")
-#     print("Now lets get started!")
-#     print("Let's go to the shop to buy supplies!")
-# choice = input("Let's go!(y/n):")
-# if choice == 'y':
-#     amount = subtract(6000, amount_1)
-#     print("Bob's Hard ware store")
-#     print("What would you like to buy?")
-#     print("1.Yokes of Oxen (150 dollars each)")
-#     print("2.Food (1 dollar per pound)")
-#     print("3.Ammunition (2 dollars per box)")
-#     print("4.Clothing (5 dollars per set)")
-#     print("5.Spare Parts (10 dollars each)")
-#     print("Press Enter to Leave")
-#     print("You have", amount, "dollars to spend")
-#     i = input("Enter the number(1/2/3/4/5:)")
-# if choice == "1":
-#     print("How many yokes would you like to buy?(3 max)")
-# choice = input()
-# if choice == '1':
-#     print("Sure")
-#     print("amount due is 150 dollars")
-#     amount_1 = 150
-# if choice == '2':
-#     print("Sure")
-#     print("amount due is 300 dollars")
-#     amount_1 = 300
-# if choice == '3':
-#     print("Sure")
-#     print("amount due is 450 dollars")
-# else:
-#     print("Sorry you can only carry (at max) 3 yokes")
-# if choice == '2':
-#     print("How many pounds do you want?(1950,2000 max)")
-#     choice = input()
-# if choice == '1950':
-#     print("You might need more!")
-#     amount_2 = 1950
-#
-# if choice == '2000':
-#     print("You might need more!")
-#     print(add(num1, num2))
-#     amount_2 = 2000
-# if choice == '3':
-#     print("ok")
-# if choice == '4':
-#     print("ok")
-# if choice == '5':
-#     print("ok")
-#
-# if choice == 'n':
-#     print("Bye!")
-#
-# if choice == '2':
-#     print("Bye!")
-#
-# running = True
-# while running == True:
+        elif shop_choice == "5":
+            while parts_choice:
+                parts = int(input("How many spare parts would you like to buy?(9 max) "))
+                if parts < 0:
+                    print("Please purchase a positive integer.")
+                elif (parts * 10) > money:
+                    print("You do not have enough money.")
+                else:
+                    print("You purchased {} spare parts.".format(parts))
+                    money = money - (parts * 10)
+                    parts_choice = False
+
+else:
+    sys.exit()
+print("Let's go!")
+print("Today is,", month, 1854)
+go = input("Want to go?(y/n): ")
+if go == 'y':
+    print("                  __________________ ")
+    print("       (_ ___    /------------------\ ")
+    print("       (*]_~_|\  |-/---\------/---\-| ")
+    print("       .// .ll     \---/      \---/")
+    print("1. Check supplies")
+    print("2. Trade")
+    print("3. Rest")
+    choices = input("What do you want to do? ")
+    if choices == "1":
+        print(supplies(money, oxen, food, ammo, clothes, parts))
+    elif choices == "2":
+        print("ok boomer")
+        # do trade function here
+    elif choices == "3":
+        if name_health <= 94:
+            name_health += 5
+        elif name1_health <= 94:
+            name1_health += 5
+        elif name2_health <= 94:
+            name2_health += 5
+        elif name3_health <= 94:
+            name3_health += 5
+        elif name4_health <= 94:
+            name4_health += 5
+elif go == "n":
+    sys.exit()
