@@ -1,22 +1,28 @@
-# Online Python compiler (interpreter) to run Python online.
-# Copyright 2020
-# If you wish to use the code, please PM one of the makers listed below.
+'''
+Oregon trail
+Authors: Ocra004, Shadowfax13 (Caleb Han), Ripsticker321, LJCoder619, Undefined_Error, DatMathBoy
+'''
+
+# imports
 import random
 import time
 import sys
 
+# main variables
 oxen = 0
 food = 0
 ammo = 0
 clothes = 0
 parts = 0
 miles_to_go = 2000
+
+# introduction
 print("OREGON TRAIL")
 time.sleep(1)
 print("By Ocra004, Shadowfax13, Ripsticker321, LJCoder619, Undefined_Error, DatMathBoy")
 time.sleep(1)
 
-
+# determine probabilities of getting stolen
 def prob_theft(money):
     answer = ""
     if money >= 1000:
@@ -33,11 +39,10 @@ def prob_theft(money):
             answer = "$50 was stolen."
     return answer
 
-
+# set dictionary for types of supplies
 def supplies(money, oxen, food, ammo, clothes, parts):
     supplies_dict = {"money:": money, "oxen:": oxen, "food:": food, "ammo:": ammo, "clothes:": clothes, "parts:": parts}
     return supplies_dict
-
 
 running = True
 money = 6000
@@ -56,6 +61,8 @@ while running:
         shop = True
 print("Loading...")
 time.sleep(2)
+
+# set up people
 name_health = 100
 name1_health = 100
 name2_health = 100
@@ -66,6 +73,8 @@ name_1 = input("Name of second person: ")
 name_2 = input("Name of third person: ")
 name_3 = input("Name of fourth person: ")
 name_4 = input("Name of fifth person: ")
+
+# set up occupation
 print("Great!")
 print("Who do you want to be?")
 print("1. Banker")
@@ -92,6 +101,7 @@ elif choice == '5':
 else:
     sys.exit()
 
+# set up time
 print("Select the month do you want to leave you must get to your destination before winter comes.")
 print("1. February")
 print("2. March")
@@ -128,6 +138,8 @@ elif month == '8':
     month = 'September 23'
 else:
     sys.exit()
+
+# buy supplies
 print("Let's first go to the shop to buy supplies!")
 shop_go = input("Type 1 to go!: ")
 if shop_go == '1':
@@ -217,6 +229,8 @@ if shop_go == '1':
 
 else:
     sys.exit()
+
+# initiate game
 print("Let's go!")
 print("Today is,", month, 1854)
 go = input("Want to go?(y/n): ")
@@ -235,7 +249,6 @@ if go == 'y':
         if choices == "1":
             print(supplies(money, oxen, food, ammo, clothes, parts))
         elif choices == "2":
-            print("ok boomer")
             # do trade function here
         elif choices == "3":
             if name_health <= 94:
@@ -251,5 +264,6 @@ if go == 'y':
         elif choices == "4":
             sys.exit()
 
+# exit game
 elif go == "n":
     sys.exit()
